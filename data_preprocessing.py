@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Define categories and corresponding labels
-categories = ['water_bottle', 'pencil_case', 'coat', 'watch', 'key', 'uniform', 'umbrella', 'glasses', 'hat', 'gloves', 'shoes', 'earphones', 'others']
+categories = ['water_bottle', 'pencil_case', 'coat', 'umbrella'] #'key', 'uniform', 'umbrella', 'glasses', 'hat', 'gloves', 'shoes', 'earphones', 'others']
 num_classes = len(categories)
 
 # Initialize lists to store image data and labels
@@ -12,9 +12,9 @@ labels = []
 
 # Loop through each category folder
 for label, category in enumerate(categories):
-    folder_path = f'path/to/{category}/'  # Replace with actual path to the category folder
+    folder_path = f'./{category}/'  # Replace with actual path to the category folder
     for img_filename in os.listdir(folder_path):
-        if img_filename.endswith('.img'):
+        if img_filename.endswith('.jpg'):
             img_path = os.path.join(folder_path, img_filename)
             # Read and preprocess image
             img = cv2.imread(img_path)
@@ -28,5 +28,5 @@ for label, category in enumerate(categories):
 data = np.array(data)
 labels = np.array(labels)
 
-# Split data into train, validation, and test sets (e.g., using train_test_split from scikit-learn)
-# Further processing and model training will depend on your specific setup and requirements
+np.save("image_np_arr", data)
+np.save("labels_np_arr", labels)
