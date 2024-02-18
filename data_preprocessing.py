@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Define categories and corresponding labels
-categories = ['water_bottle', 'pencil_case', 'coat', 'umbrella'] #'key', 'uniform', 'umbrella', 'glasses', 'hat', 'gloves', 'shoes', 'earphones', 'others']
+categories = ['water_bottle', 'pencil_case', 'coat', 'umbrella', 'watch', 'electronics', 'gloves'] #'key', 'uniform', 'umbrella', 'glasses', 'hat', 'gloves', 'shoes', 'earphones', 'others']
 num_classes = len(categories)
 
 # Initialize lists to store image data and labels
@@ -18,6 +18,7 @@ for label, category in enumerate(categories):
             img_path = os.path.join(folder_path, img_filename)
             # Read and preprocess image
             img = cv2.imread(img_path)
+            if img is None: continue
             img = cv2.resize(img, (224, 224))  # Resize image to a consistent size
             img = img / 255.0  # Normalize pixel values
             # Add image data and label to lists
