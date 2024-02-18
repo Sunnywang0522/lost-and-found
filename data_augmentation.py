@@ -37,4 +37,4 @@ def augment_data (folder_path,output_path, num_augmentations_per_image=3):
                 cv2.imwrite(output_img_path, augmented_img)
 
 # Example usage:
-augment_data('/Users/ivycr1/Desktop/Computer Vision project/Water Bottle', '/Users/ivycr1/Desktop/Computer Vision project/Water Bottle', num_augmentations_per_image=3)
+augment_data('/Users/ivycr1/Documents/github/Electronics', '/Users/ivycr1/Documents/github/Electronics', num_augmentations_per_image=3)
